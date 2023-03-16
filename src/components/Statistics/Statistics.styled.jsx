@@ -28,6 +28,7 @@ export const StatisticsBlockItem = styled.li`
   justify-content: center;
   width: calc(100% / 5);
   padding: 8px;
+  background-color: ${getRandomHexColor};
 
   :first-child {
     border-bottom-left-radius: 4px;
@@ -37,3 +38,9 @@ export const StatisticsBlockItem = styled.li`
     border-bottom-right-radius: 4px;
   }
 `;
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
